@@ -1,0 +1,61 @@
+.container {
+    width: 80%;
+    margin: auto;
+    border: 2px solid orange;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 2px solid orange;
+    margin: 5px;
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 2px solid orange;
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+.grafico {
+    display: flex;
+    flex-direction: row; /* Mantener las barras en fila */
+    justify-content: center; /* Centrar horizontalmente las barras */
+    border: 2px solid orange;
+    padding: 20px;
+    flex-wrap: wrap; /* Permitir que las barras se ajusten en múltiples líneas si es necesario */
+}
+
+.bar {
+    width: 150px; /* Ajusta el ancho de la barra */
+    margin: 20px; /* Aumentar el margen para mayor espaciado entre las barras */
+    position: relative; /* Para poder posicionar el texto dentro de la barra */
+    display: flex; /* Usar flexbox para el texto */
+    align-items: center; /* Centrar verticalmente el texto */
+    color: white; /* Color del texto del porcentaje */
+    justify-content: center; /* Centrar el texto dentro de la barra */
+}
+
+.percentage {
+    margin-left: 10px; /* Margen a la izquierda del porcentaje */
+}
