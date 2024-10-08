@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Votación</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Incluir la librería Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="form">
             <input type="text" id="nombre" placeholder="Nombre">
             <select id="color">
-                <option value="#FF5733">Rojo</option>
+                <option value="#FF0000">Rojo</option> <!-- Color rojo puro -->
                 <option value="#33FF57">Verde</option>
                 <option value="#3357FF">Azul</option>
                 <option value="random">Aleatorio</option>
@@ -36,8 +38,14 @@
         <div class="grafico" id="barChart">
             <!-- Gráfico de barras -->
         </div>
+
+        <!-- Canvas para el gráfico circular -->
+        <div class="grafico-circular">
+            <canvas id="pieChart"></canvas>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

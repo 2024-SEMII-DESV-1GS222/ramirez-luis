@@ -39,23 +39,37 @@ button {
 
 .grafico {
     display: flex;
-    flex-direction: row; /* Mantener las barras en fila */
-    justify-content: center; /* Centrar horizontalmente las barras */
+    flex-direction: row; 
+    justify-content: center;
     border: 2px solid orange;
     padding: 20px;
-    flex-wrap: wrap; /* Permitir que las barras se ajusten en múltiples líneas si es necesario */
+    flex-wrap: nowrap; /* Evita que las barras se envuelvan a la siguiente línea */
+    height: 150px; /* Altura fija para el contenedor del gráfico */
+    position: relative; /* Para manejar la posición de las barras */
 }
 
 .bar {
-    width: 150px; /* Ajusta el ancho de la barra */
-    margin: 20px; /* Aumentar el margen para mayor espaciado entre las barras */
-    position: relative; /* Para poder posicionar el texto dentro de la barra */
-    display: flex; /* Usar flexbox para el texto */
-    align-items: center; /* Centrar verticalmente el texto */
-    color: white; /* Color del texto del porcentaje */
-    justify-content: center; /* Centrar el texto dentro de la barra */
+    width: 100px; /* Ancho de las barras */
+    margin: 0 5px; /* Espaciado horizontal entre barras */
+    position: relative;
+    display: flex;
+    align-items: flex-start; /* Alinear las barras desde la parte superior */
+    justify-content: center; /* Centra el texto horizontalmente */
+    
 }
 
 .percentage {
-    margin-left: 10px; /* Margen a la izquierda del porcentaje */
+    margin-left: 5px; /* Espaciado menor entre el texto y la barra */
+}
+
+/* Ajustes para el gráfico circular */
+.grafico-circular {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto; /* Centrar el gráfico circular */
+}
+
+canvas {
+    width: 300px !important; /* Establecer el ancho del gráfico circular */
+    height: 300px !important; /* Establecer la altura del gráfico circular */
 }
