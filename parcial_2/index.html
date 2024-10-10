@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números Pseudoaleatorios</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula la hoja de estilos -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la aplicación -->
+        <div class="header"> <!-- Encabezado que contiene el título y botones -->
+            <h1>Generador de Números Pseudoaleatorios</h1> <!-- Título de la aplicación -->
+            <div class="button-container"> <!-- Contenedor para los botones -->
+                <button id="generarBtn">Generar</button> <!-- Botón para generar un número -->
+                <button id="ascendenteBtn">Ascendente</button> <!-- Botón para ordenar en forma ascendente -->
+                <button id="descendenteBtn">Descendente</button> <!-- Botón para ordenar en forma descendente -->
+                <button id="limpiarBtn" class="round-button">⟲</button> <!-- Botón para limpiar los números generados -->
+            </div>
+        </div>
+        <div class="numbers-container"> <!-- Contenedor donde se mostrarán los números generados -->
+            <!-- Los números generados se insertarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <script src="module.js"></script> <!-- Vincula el archivo de módulo que maneja la generación de números -->
+    <script src="app.js"></script> <!-- Vincula el archivo principal de la aplicación -->
+</body>
+</html>
