@@ -7,7 +7,11 @@ const NumberGenerator = (() => {
     };
 
     const addNumber = () => {
-        const newNumber = generateRandomNumber(); // Genera un nuevo número
+        let newNumber;
+        do {
+            newNumber = generateRandomNumber(); // Genera un nuevo número
+        } while (numbers.includes(newNumber)); // Repite mientras el número ya esté en la lista
+        
         numbers.push(newNumber); // Agrega el nuevo número a la lista
     };
 
