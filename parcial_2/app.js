@@ -9,10 +9,13 @@ const App = (() => {
 
     const handlers = {
         generarNumero() {
-            NumberGenerator.addNumber(); // Agrega un nuevo número usando el módulo
-            App.renderNumbers(); // Renderiza los números en la interfaz
-            //const numbers = NumberGenerator.getNumbers(); // Obtiene la lista de números generados
-            //console.log(numbers); // Muestra la lista de números en la consola
+            try {
+                NumberGenerator.addNumber(); // Intenta agregar un nuevo número
+                App.renderNumbers(); // Renderiza los números en la interfaz
+            } catch (error) {
+                console.error(error.message);
+                alert(error.message); // Muestra un mensaje de alerta si se genera el error
+            }
         },
 
         ordenarAscendente() {
