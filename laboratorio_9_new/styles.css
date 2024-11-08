@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  padding: 5rem;
+  background-color: #031926;
+}
+
+main {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  max-width: 550px; /* Limita el ancho máximo a 550px, igual que el contenedor de búsqueda */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+/* Estilo del contenedor de búsqueda */
+main > section:nth-child(1) {
+  width: 100%; /* Se ajusta al contenedor principal */
+  max-width: 550px; /* Limita el ancho máximo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+section {
+  position: relative;
+}
+
+section > img {
+  width: 275px;
+  height: 110px;
+  align-self: center;
+  position: absolute;
+  top: -80px;
+  transition: transform 0.3s ease;
+}
+
+section > img:hover {
+  transform: scale(1.1);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #f0f0f0; /* Fondo gris suave */
+  border: 1px solid #f0f0f0; /* Borde suave para el input */
+  border-radius: 5px; /* Esquinas redondeadas */
+  font-family: 'Montserrat', sans-serif;
+}
+
+input:placeholder-shown {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.description {
+  font-weight: 400; /* Fuente más ligera */
+  color: #666; /* Color gris */
+  font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+  margin-bottom: 0.5rem;
+  text-align: left; /* Alinear a la izquierda */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+label {
+  font-weight: bold; /* Negrita para la palabra "Buscar" */
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+  text-align: left; /* Alinear a la izquierda */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+.button-group {
+  display: flex;
+  /*  justify-content: space-between;*/
+  justify-content: space-between; /* Asegura que los botones estén alineados a la derecha */
+  width: 100%;
+  margin-top: 0.5rem; /* Espacio adicional arriba de los botones */
+  position: relative; /* Para asegurar que no se afecte el layout */
+}
+
+#clear-button {
+  visibility: hidden; /* Mantiene el espacio ocupado por el botón, pero no lo muestra */
+  position: absolute; /* Esto evita que el espacio del botón "Limpiar" mueva el resto */
+  right: 0; /* Esto asegura que el botón "Limpiar" se alinee correctamente al lado derecho */
+}
+
+
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-clear {
+  background-color: #6c757d;
+}
+
+.btn-clear:hover {
+  background-color: #5a6268;
+}
+
+/* Estilo del contenedor de detalles */
+#pokemon-details {
+  display: grid;
+  grid-template-columns: 1fr; /* Hace que las tarjetas ocupen todo el ancho */
+  width: 100%; /* Se ajusta al contenedor principal */
+  max-width: 550px; /* Limita el ancho máximo igual que el contenedor de búsqueda */
+  gap: 1rem;
+  margin: 0 auto; /* Centra el contenedor */
+  background-color: #fff; /* Fondo blanco para coincidir con el contenedor de búsqueda */
+  padding: 2rem; /* Añadir el mismo padding que el contenedor de búsqueda */
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para igualar la apariencia */
+}
+
+/* Estilo de las tarjetas de Pokémon */
+.pokemon-card {
+  width: 100%; /* Hace que la tarjeta ocupe todo el ancho del contenedor */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  gap: 1rem; /* Espacio entre los elementos */
+}
+
+/* Estilo del encabezado de la tarjeta */
+.pokemon-card__header {
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  text-transform: capitalize;
+  width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.pokemon-card__body {
+  display: flex;
+  flex-direction: row; /* Coloca las secciones en una fila */
+  justify-content: space-between; /* Separa los elementos para que ocupen los extremos */
+  width: 100%; /* Asegura que el cuerpo ocupe todo el ancho */
+}
+
+
+
+/* Estilo para la sección de peso/altura */
+.pokemon-card__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea la información a la derecha */
+  justify-content: center;
+}
+
+.pokemon-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido de la información */
+  gap: 0.5rem; /* Separación entre los diferentes elementos de información (por ejemplo, peso, habilidades) */
+}
+
+.pokemon-card__abilities {
+  margin-top: 1rem;
+}
+
+.pokemon-card__abilities ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.pokemon-card__sprites {
+  display: flex;
+  flex-direction: column; /* Apila los elementos en columna */
+}
+
+.sprite-images {
+  display: flex;
+  gap: 0.5rem; /* Espacio entre las imágenes */
+  justify-content: flex-start; /* Alinea las imágenes a la izquierda */
+}
