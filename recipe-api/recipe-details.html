@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Receta</title>
+  <link rel="stylesheet" href="css/recipe-details.css">
+</head>
+<body>
+  <header>
+    
+    <h1>Detalles de la Receta</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="btn btn-index" data-page="index.html">Inicio</a></li>
+        <li><a href="#" class="btn btn-search" data-page="search.html">Buscar</a></li>
+        <li><a href="#" class="btn btn-recipe-details" data-page="recipe-details.html">Detalles</a></li>
+        <li><a href="#" class="btn btn-nutrition" data-page="nutrition.html">Nutrición</a></li>
+        <li><a href="#" class="btn btn-tips" data-page="tips.html">Consejos</a></li>
+        <li><a href="#" class="btn btn-my-pantry" data-page="my-pantry.html">Mi Despensa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    
+  <button id="btn-back" class="btn">Volver a Buscar</button>
+  
+
+  <div id="recipe-details">
+    <!-- Detalles de la receta se cargarán aquí -->
+  </div>
+
+  <footer> 
+    <p>&copy; 2024 Recipe API</p>
+  </footer>
+  
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const recipeId = urlParams.get('id');
+    getRecipeDetails(recipeId);
+
+    document.getElementById('btn-back').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+</body>
+</html>

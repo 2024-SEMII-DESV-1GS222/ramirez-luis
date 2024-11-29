@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Despensa</title>
+  <link rel="stylesheet" href="css/my-pantry.css">
+</head>
+<body>
+  <header>
+    
+    <h1>Mi Despensa</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="btn btn-index" data-page="index.html">Inicio</a></li>
+        <li><a href="#" class="btn btn-search" data-page="search.html">Buscar</a></li>
+        <li><a href="#" class="btn btn-recipe-details" data-page="recipe-details.html">Detalles</a></li>
+        <li><a href="#" class="btn btn-nutrition" data-page="nutrition.html">Nutrición</a></li>
+        <li><a href="#" class="btn btn-tips" data-page="tips.html">Consejos</a></li>
+        <li><a href="#" class="btn btn-my-pantry" data-page="my-pantry.html">Mi Despensa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form id="pantry-form" class="search-form">
+    <input type="text" id="ingredients" placeholder="Ingresa los ingredientes" required>
+    <button type="submit" class="btn">Buscar Recetas</button>
+  </form>
+
+  <div id="pantry-recipes">
+    <!-- Recetas posibles con los ingredientes ingresados -->
+  </div>
+
+  <footer> 
+    <p>&copy; 2024 Recipe API</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    document.getElementById('pantry-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const ingredients = document.getElementById('ingredients').value;
+      searchRecipesByIngredients(ingredients);
+    });
+  </script>
+</body>
+</html>

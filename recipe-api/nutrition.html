@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información Nutricional</title>
+  <link rel="stylesheet" href="css/nutrition.css">
+  <style>
+    #nutrition-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin: 20px;
+    }
+    #nutrition-container img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #nutrition-info {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Información Nutricional</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="btn">Inicio</a></li>
+        <li><a href="search.html" class="btn">Buscar</a></li>
+        <li><a href="recipe-details.html" class="btn">Detalles</a></li>
+        <li><a href="nutrition.html" class="btn">Nutrición</a></li>
+        <li><a href="tips.html" class="btn">Consejos</a></li>
+        <li><a href="my-pantry.html" class="btn">Mi Despensa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button id="btn-back" class="btn">Volver a Buscar</button>
+
+  <div id="nutrition-container">
+    <!-- Imagen del plato -->
+    <img id="recipe-image" src="placeholder.jpg" alt="Imagen del plato" />
+
+    <!-- Información nutricional -->
+    <div id="nutrition-info">
+      <p>Cargando información nutricional...</p>
+    </div>
+  </div>
+
+  <footer> 
+    <p>&copy; 2024 Recipe API</p>
+  </footer>
+
+  <script>
+    // API Key para la Spoonacular API
+    const apiKey = 'e0f808d4b5ac4970a0dd9c9236ef67a3';
+
+    // Función para obtener el parámetro de la URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Obtener el ID de la receta desde la URL
+    const recipeId = getQueryParam('id');
+
+    // Función para cargar información nutricional y la imagen
+    async function loadNutritionInfo(id) {
+      try {
+        // Llamada a la API para obtener los datos nutricionales
+        const nutritionResponse = await fetch(`https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${apiKey}`);
+        if (!nutritionResponse.ok) throw new Error('Error al obtener la información nutricional');
+        const nutritionData = await nutritionResponse.json();
+
+        // Llamada a la API para obtener información básica de la receta (incluyendo la imagen)
+        const recipeResponse = await fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`);
+        if (!recipeResponse.ok) throw new Error('Error al obtener la información de la receta');
+        const recipeData = await recipeResponse.json();
+
+        // Actualizar el contenido de la página
+        const nutritionContainer = document.getElementById('nutrition-info');
+        const recipeImage = document.getElementById('recipe-image');
+
+        // Mostrar la información nutricional
+        nutritionContainer.innerHTML = `
+          <h2>Detalles Nutricionales</h2>
+          <ul>
+            <li><strong>Calorías:</strong> ${nutritionData.calories}</li>
+            <li><strong>Grasas:</strong> ${nutritionData.fat}g</li>
+            <li><strong>Proteínas:</strong> ${nutritionData.protein}g</li>
+            <li><strong>Carbohidratos:</strong> ${nutritionData.carbs}g</li>
+          </ul>
+        `;
+
+        // Mostrar la imagen del plato
+        recipeImage.src = recipeData.image;
+        recipeImage.alt = `Imagen de ${recipeData.title}`;
+      } catch (error) {
+        console.error('Error:', error);
+        const nutritionContainer = document.getElementById('nutrition-info');
+        nutritionContainer.innerHTML = '<p>Error al cargar la información nutricional. Intenta de nuevo más tarde.</p>';
+      }
+    }
+
+    // Cargar información si el ID está disponible
+    if (recipeId) {
+      loadNutritionInfo(recipeId);
+    } else {
+      document.getElementById('nutrition-info').innerHTML = '<p>No se especificó una receta válida.</p>';
+    }
+  </script>
+  <script>
+    document.getElementById('btn-back').addEventListener('click', function() {
+      window.history.back();
+    });
+  </script>
+</body>
+</html>
