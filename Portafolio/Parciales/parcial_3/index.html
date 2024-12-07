@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Pokemon</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="poke.png" alt="PokeAPI" class="logo">
+        </div>
+    
+        <div class="search-box">
+            <h1>Buscador de pokemones</h1>
+            <p>Busca desde pokemones hasta las habilidades de los mismos.</p>
+    
+            <form class="search-form">
+                <div class="search-fields-container">
+                    <div class="search-group">
+                        <div class="label-group">
+                            <label for="pokemon-name">Buscar</label>
+                        </div>
+                        <div class="search-input-container">
+                            <input type="text" id="pokemon-name" placeholder="Escribe un nombre...">
+                        </div>
+                    </div>
+                    <div class="search-group">
+                        <div class="label-group">
+                            <label for="search-type">Tipo de Búsqueda</label>
+                        </div>
+                        <select id="search-type" class="search-select">
+                            <option value="pokemon">Por Pokemon</option>
+                            <option value="habilidad">Por Habilidad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="button" id="clear-button" style="display: none;">Limpiar</button>
+                    <button type="submit" id="search-button">Buscar</button>
+                </div>
+            </form>
+        </div>
+    
+        <div id="pokemon-info" class="pokemon-info" style="display: none;"></div>
+
+        <div class="ability-info" style="display: none;">
+            <h3 class="ability-title">Nombre de la Habilidad</h3>
+            <div class="ability-content">
+                <p><strong>Quién puede aprenderla:</strong></p>
+                <ul class="ability-learners">
+                    <li>Pokemon 1</li>
+                    <li>Pokemon 2</li>
+                    <li>Pokemon 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

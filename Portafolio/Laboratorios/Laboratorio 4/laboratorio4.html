@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Invertir Texto</title>
+    <script>
+        function reverseText(event) {
+            // Obtener el valor del campo de entrada
+            let inputText = event.target.value;
+
+            // Invertir el texto
+            let reversedText = inputText.split('').reverse().join('');
+
+            // Actualizar el contenido del span
+            document.getElementById('reversedText').textContent = reversedText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario para Invertir Texto</h1>
+    
+    <!-- Campo de entrada -->
+    <input type="text" oninput="reverseText(event)" placeholder="Escribe algo...">
+    
+    <!-- Span para mostrar el texto invertido -->
+    <p>Texto invertido: <span id="reversedText"></span></p>
+</body>
+</html>

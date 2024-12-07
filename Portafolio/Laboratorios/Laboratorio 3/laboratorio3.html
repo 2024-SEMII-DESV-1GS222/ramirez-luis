@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palíndromo de Doble Base</title>
+    <style>
+        /* Estilos para los títulos */
+        h2 {
+            color: #042b50; /* Verde para los títulos */
+        }
+    </style>
+</head>
+<body>
+
+<!--Palíndromo de doble base 10 y 2 -->     
+    <h2>Verificar si un número es palíndromo en base 10 y base 2</h2>
+
+    <label for="numero">Introduce un número:</label>
+    <input type="number" id="numero" />
+    <button onclick="verificarPalindromo()">Verificar</button>
+
+     <!-- Lugar donde se mostrará el resultado -->
+     <div id="resultado"></div>
+
+    <!-- Llamada al archivo JavaScript externo -->
+    <script src="palindromo.js"></script>
+    
+
+<!--Cadena "t" que retorne la cantidad de caracteres-->
+    <h2>Contador de Caracteres</h2>
+    
+    <!-- Input para la cadena -->
+    <input type="text" id="inputCadena" placeholder="Introduce una cadena">
+    
+    <!-- Botón para contar los caracteres -->
+    <button onclick="contarCaracteres()">Contar Caracteres</button>
+    
+    <!-- Lugar donde se mostrará el resultado -->
+    <div id="resultado2"></div>
+
+    <script>
+        // Función para contar caracteres
+        function contarCaracteres() {
+            const t = document.getElementById("inputCadena").value;  // Toma el valor del input
+            const conteo = {};  // Objeto para almacenar el conteo de caracteres
+
+            for (let i = 0; i < t.length; i++) {
+                const caracter = t[i];
+                if (conteo[caracter]) {
+                    conteo[caracter] += 1;
+                } else {
+                    conteo[caracter] = 1;
+                }
+            }
+
+            // Crear el texto a mostrar
+            let resultadoTexto = "Resultado:<br>";
+            for (const caracter in conteo) {
+                resultadoTexto += `${caracter}: ${conteo[caracter]}<br>`;
+            }
+
+            // Mostrar el resultado en el div
+            document.getElementById("resultado2").innerHTML = resultadoTexto;
+        }
+    </script>
+
+
+<!-- Determinar si el año es Bisiesto-->
+    <h2>¿Es un Año Bisiesto?</h2>
+    
+    <!-- Input para el año -->
+    <input type="number" id="inputAnio" placeholder="Introduce un año">
+    
+    <!-- Botón para verificar si el año es bisiesto -->
+    <button onclick="verificarBisiesto()">Verificar</button>
+    
+    <!-- Lugar donde se mostrará el resultado -->
+    <div id="resultado3"></div>
+
+    <script>
+        // Función para verificar si un año es bisiesto
+        function esBisiesto(a) {
+            // Un año es bisiesto si es divisible por 4, pero no por 100, excepto si también es divisible por 400
+            return (a % 4 === 0 && a % 100 !== 0) || (a % 400 === 0);
+        }
+
+        // Función que obtiene el valor del input y muestra el resultado
+        function verificarBisiesto() {
+            const anio = parseInt(document.getElementById("inputAnio").value);  // Toma el valor del input como entero
+            const resultadoDiv = document.getElementById("resultado3");
+
+            if (isNaN(anio)) {
+                resultadoDiv.innerHTML = "Por favor, introduce un número válido.";  // Maneja casos donde el input no es un número
+            } else if (esBisiesto(anio)) {
+                resultadoDiv.innerHTML = `El año ${anio} es bisiesto.`;
+            } else {
+                resultadoDiv.innerHTML = `El año ${anio} no es bisiesto.`;
+            }
+        }
+    </script>
+
+
+<!--Sumatoria de Números Primos-->
+ <!-- Input para el número -->
+ <h2>Sumatoria de Números Primos</h2>
+ <label for="numero2">Introduce un número:</label>
+<input type="number" id="numero2" min="1" max="999999" placeholder="Introduce un número">
+ <button onclick="calcularSumatoria()">Calcular Sumatoria</button>
+ 
+ <!-- Lugar donde se mostrará el resultado -->
+ <p id="resultado4"></p>
+
+ <script>
+    // Función para verificar si un número es primo
+    function esPrimo(num) {
+        if (num <= 1) return false; // 1 no es primo
+        if (num === 2) return true; // 2 es primo
+        if (num % 2 === 0) return false; // múltiplos de 2 no son primos
+        for (let i = 3; i * i <= num; i += 2) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    // Función para calcular la sumatoria de números primos menores o iguales a n, incluyendo el 1
+    function calcularSumatoria() {
+        const n = parseInt(document.getElementById("numero2").value);
+        let suma = 0;
+
+        if (isNaN(n) || n <= 0 || n >= 1000000) {
+            document.getElementById("resultado").innerText = "Por favor, introduce un número válido entre 1 y 999999.";
+            return;
+        }
+
+        // Incluye el 1 en la sumatoria si es parte del rango
+        if (n >= 1) {
+            suma += 1;
+        }
+
+        // Calcula la suma de números primos
+        for (let i = 2; i <= n; i++) {
+            if (esPrimo(i)) {
+                suma += i;
+            }
+        }
+
+        document.getElementById("resultado4").innerText = `La sumatoria de todos los números primos menores o iguales a ${n} es: ${suma}`;
+    }
+</script>
+
+</body>
+</html>
