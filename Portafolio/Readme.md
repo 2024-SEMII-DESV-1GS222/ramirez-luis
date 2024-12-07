@@ -1,34 +1,34 @@
 # 🌟 **Portafolio de Luis Ramírez** 🌟  
 
 ## 📝 **Información Personal**
-- **Nombre completo:** Luis Ramírez**
-- **Correo Electrónico:** luis.ramirez@utp.ac.pa**
+- **Nombre completo:** Luis Ramírez
+- **Correo Electrónico:** luis.ramirez@utp.ac.pa
 - **Cédula:** 8-721-2435**
-- **Centro de Procedencia:** Universidad Tecnológica de Panamá**
-- **Facultad:** Ingeniería de Sistemas Computacionales**
-- **Departamento:** Ingeniería de Software**
-- **Curso:** Desarrollo de Software V (Presencial)**
-- **Facilitador:** Eric Agrazal**
+- **Centro de Procedencia:** Universidad Tecnológica de Panamá
+- **Facultad:** Ingeniería de Sistemas Computacionales
+- **Departamento:** Ingeniería de Software
+- **Curso:** Desarrollo de Software V (Presencial)
+- **Facilitador:** Eric Agrazal
 
 ---
 
 ## 🙋‍♂️ **Acerca de Mí**
 - **🎯 Pasatiempos:**
-  Disfruto aprender sobre **tecnologías emergentes** y mantenerme actualizado en el campo de **Big Data** y análisis de información.**
+  Disfruto aprender sobre **tecnologías emergentes** y mantenerme actualizado en el campo de **Big Data** y análisis de información.
 
 - **💡 Motivación para mi Carrera:**
-  Elegí Desarrollo de Software porque me gusta retarme a mejorar y aprender nuevas tecnologías.**
-  Poder **crear soluciones tecnológicas** que resuelvan problemas del mundo real con mis propias manos es un deseo interno.**
+  Elegí Desarrollo de Software porque me gusta retarme a mejorar y aprender nuevas tecnologías.
+  Poder **crear soluciones tecnológicas** que resuelvan problemas del mundo real con mis propias manos es un deseo interno.
   Sé que esta carrera siempre requerirá **aprendizaje continuo**, y eso me motiva cada día.**
 
 ---
 
 ## 📘 **Intereses Académicos**  
-- Desarrollo de software 🖥️**
-- Inteligencia artificial 🤖**
+- Desarrollo de software 🖥️
+- Inteligencia artificial 🤖
 - Big Data 📊  
-- Diseño de interfaces de usuario 🎨**
-- Gestión de proyectos de software 📂**
+- Diseño de interfaces de usuario 🎨
+- Gestión de proyectos de software 📂
 
 ---
 
